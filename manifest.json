@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Tori Listing Scraper",
+  "version": "1.0.0",
+  "description": "Extract name, make, and price from Tori.fi search result pages.",
+  "permissions": ["scripting", "activeTab", "storage"],
+  "host_permissions": ["https://www.tori.fi/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.tori.fi/*forsale/search*", "https://www.tori.fi/*forsale/item*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
